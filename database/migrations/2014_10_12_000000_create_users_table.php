@@ -22,6 +22,9 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->text('profile_photo_path')->nullable();
+            $table->string('phone')->nullable();
+            $table->unsignedBigInteger('role_id')->default();
+            $table->enum('status', ['Active', 'Banned', 'Excluded', 'Disabled'])->default('Active');
             $table->timestamps();
         });
     }

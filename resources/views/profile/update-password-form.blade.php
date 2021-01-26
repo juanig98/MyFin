@@ -32,8 +32,8 @@
             {{ __('Saved.') }}
         </x-jet-action-message>
 
-        <x-jet-button>
+        <x-button-light>
             {{ __('Save') }}
-        </x-jet-button>
+        </x-button-light>
     </x-slot>
 </x-jet-form-section>

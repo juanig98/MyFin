@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Badge;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +15,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::redirect('/dashboard', '/', 302);
+
+    Route::get('ajustes', function () {
+        return "Estos son los ajustes";
+    })->name('config');
+
+
+    Route::middleware(['authorized'])->group(function () {
+
+        Route::get('usuarios', function () {
+            $users = User::all();
+            return $users;
+        });
+        Route::get('divisas', function () {
+            $badges = Badge::all();
+            return $badges;
+        });
+
+    });
+});
