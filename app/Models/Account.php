@@ -17,4 +17,8 @@ class Account extends Model
     public function wallets(){
         return $this->hasMany('App\Models\Wallet');
     }
+
+    public function transaction(){
+        return $this->hasMany('App\Models\Transaction');
+    }
 }

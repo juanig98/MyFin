@@ -16,8 +16,11 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RoleSeeder::class,
             UserSeeder::class,
+            AccountSeeder::class,
             BadgeSeeder::class,
+            WalletSeeder::class,
         ]);
-        \App\Models\User::factory(10)->create();
+        \App\Models\Transaction::factory(15)->create();
+     //   \App\Models\User::factory(10)->create();
     }
 }

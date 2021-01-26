@@ -15,9 +15,12 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->date('date');
+            $table->timestamp('date');
+            $table->string('title', 100);
+            $table->text('description')->nullable();
             $table->foreignId('wallet_id')->constrained();
             $table->foreignId('badge_id')->constrained();
+            $table->foreignId('account_id')->constrained();
             $table->enum('type', ['Input', 'Output', 'Transfer']);
             $table->enum('modality', ['Permanent', 'Extraordinary', 'Common'])->default('Common');
             $table->decimal('amount', 8, 2, true);

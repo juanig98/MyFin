@@ -2,6 +2,8 @@
 
 namespace Tests\Unit;
 
+use App\Models\User;
+use Database\Factories\UserFactory;
 use PHPUnit\Framework\TestCase;
 
 class ExampleTest extends TestCase
@@ -13,6 +15,8 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $this->assertTrue(true);
+        $user = UserFactory::new()->create();
+
+        dump($user->toArray());
     }
 }

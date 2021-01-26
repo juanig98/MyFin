@@ -17,8 +17,8 @@ class CreateWalletsTable extends Migration
             $table->id();
             $table->string('name', 100);
             $table->foreignId('account_id')->constrained();
-            $table->text('description');
-            $table->text('origin');
+            $table->text('description')->nullable();
+            $table->text('origin')->nullable();
             $table->timestamps();
         });
     }

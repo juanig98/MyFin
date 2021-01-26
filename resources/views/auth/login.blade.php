@@ -4,6 +4,7 @@
             <x-app-logo width=300 height="300" />
         </x-slot>
 
+        
         <x-jet-validation-errors class="mb-4" />
 
         @if (session('status'))
@@ -38,7 +39,7 @@
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-200 hover:text-yellow-300 mr-2" href="{{ route('register') }}">
                     {{ __('Quiero registrarme') }}
-                </a>    
+                </a>
                 @if (Route::has('password.request'))
                 <a class="underline text-sm text-gray-200 hover:text-yellow-300" href="{{ route('password.request') }}">
                     {{ __('Forgot your password?') }}
