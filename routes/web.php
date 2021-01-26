@@ -25,7 +25,12 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::get('ajustes', function () {
         return "Estos son los ajustes";
-    })->name('config');
+    })->name('settings');
+
+    Route::get('cuenta', function () {
+        return "La cuenta";
+    })->name('account');
+
 
 
     Route::middleware(['authorized'])->group(function () {

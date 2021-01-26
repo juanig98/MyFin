@@ -2,9 +2,10 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\User;
 use Closure;
-use Illuminate\Auth\Access\Gate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class Authorized
 {
@@ -17,8 +18,12 @@ class Authorized
      */
     public function handle(Request $request, Closure $next)
     {
+        $role = User::find(Auth::user()->id)->role;
 
-        if(Gate)
-            return $next($request);
+        if ($role->level_access < 7) {
+            return redirect('/');
+        }
+
+        return $next($request);
     }
 }

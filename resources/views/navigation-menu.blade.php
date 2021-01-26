@@ -15,11 +15,11 @@
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Home') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('config') }}" :active="request()->routeIs('config')">
-                        {{ __('Settings') }}
-                    </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('account') }}" :active="request()->routeIs('account')">
                         {{ __('My Account') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('settings') }}" :active="request()->routeIs('settings')">
+                        {{ __('Settings') }}
                     </x-jet-nav-link>
                 </div>
             </div>
@@ -147,11 +147,11 @@
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Home') }}
             </x-jet-responsive-nav-link>
-            <x-jet-responsive-nav-link href="{{ route('settings') }}" :active="request()->routeIs('settings')">
-                {{ __('Settings') }}
-            </x-jet-responsive-nav-link>
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('My Account') }}
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('settings') }}" :active="request()->routeIs('settings')">
+                {{ __('Settings') }}
             </x-jet-responsive-nav-link>
         </div>
 

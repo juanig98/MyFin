@@ -59,8 +59,20 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+    /**
+     *
+     */
     public function badge()
     {
         return $this->hasOne('App\Models\Account');
     }
+
+    /**
+     *
+     */
+    public function role()
+    {
+        return $this->belongsTo('App\Models\Role');
+    }
 }
+
