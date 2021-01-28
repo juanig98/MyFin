@@ -19,6 +19,7 @@ class CreateTransactionsTable extends Migration
             $table->string('title', 100);
             $table->text('description')->nullable();
             $table->foreignId('wallet_id')->constrained();
+            $table->unsignedBigInteger('wallet_origin')->references('id')->on('wallets')->nullable();
             $table->foreignId('badge_id')->constrained();
             $table->foreignId('account_id')->constrained();
             $table->enum('type', ['Input', 'Output', 'Transfer']);

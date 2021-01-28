@@ -4,7 +4,7 @@
             <x-app-logo width=300 height="300" />
         </x-slot>
 
-        
+
         <x-jet-validation-errors class="mb-4" />
 
         @if (session('status'))
@@ -16,16 +16,28 @@
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
+
             <div>
                 <x-jet-label for="email" value="{{ __('Email') }}" />
+                @if(env('APP_DEBUG'))
+                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" value="juan@email" required
+                    autofocus />
+                @else
                 <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"
                     required autofocus />
+                @endif
             </div>
 
             <div class="mt-4">
                 <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required
+                @if(env('APP_DEBUG'))
+                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" value="abc.1234"
+                    required autocomplete="current-password" />
+                @else
+                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" value="" required
                     autocomplete="current-password" />
+                @endif
+
             </div>
 
             <div class="block mt-4">

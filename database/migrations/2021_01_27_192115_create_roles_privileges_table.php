@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAccountsTable extends Migration
+class CreateRolesPrivilegesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateAccountsTable extends Migration
      */
     public function up()
     {
-        Schema::create('accounts', function (Blueprint $table) {
+        Schema::create('roles_privileges', function (Blueprint $table) {
             $table->id();
-            $table->decimal('balance', 8, 2)->default(0.00);
-            $table->decimal('annual_balance', 8, 2)->default(0.00);
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('role_id')->references('id')->on('roles');
+            $table->foreignId('privilege_id')->references('id')->on('privileges');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateAccountsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('accounts');
+        Schema::dropIfExists('roles_privileges');
     }
 }

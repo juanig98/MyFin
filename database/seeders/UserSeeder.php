@@ -17,6 +17,7 @@ class UserSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
+            'id' => 1,
             'name' => 'Admin Trador',
             'email' => 'admin@email',
             'email_verified_at' => Carbon::now(),
@@ -28,6 +29,7 @@ class UserSeeder extends Seeder
             'updated_at' => Carbon::now()
         ]);
         DB::table('users')->insert([
+            'id' => 2,
             'name' => 'Juan Ignacio Galarza',
             'email' => 'juan@email',
             'email_verified_at' => Carbon::now(),
@@ -39,6 +41,7 @@ class UserSeeder extends Seeder
             'updated_at' => Carbon::now()
         ]);
         DB::table('users')->insert([
+            'id' => 3,
             'name' => 'Pedro Martinez',
             'email' => 'pedro@email',
             'email_verified_at' => Carbon::now(),
@@ -50,6 +53,7 @@ class UserSeeder extends Seeder
             'updated_at' => Carbon::now()
         ]);
         DB::table('users')->insert([
+            'id' => 4,
             'name' => 'Santiago Baronetto',
             'email' => 'santiago@email',
             'email_verified_at' => Carbon::now(),

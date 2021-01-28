@@ -22,6 +22,7 @@ class WalletSeeder extends Seeder
         $santiago = 4;
 
         DB::table('wallets')->insert([
+            'id' => 1,
             'name' => 'Efectivo',
             'account_id' => $juan,
             'description' => "Valores en efectivo (moneda)",
@@ -30,6 +31,7 @@ class WalletSeeder extends Seeder
             'updated_at' => Carbon::now()
         ]);
         DB::table('wallets')->insert([
+            'id' => 2,
             'name' => 'Banco Santander Río',
             'account_id' => $juan,
             'description' => "Cuenta bancaria",
@@ -38,6 +40,7 @@ class WalletSeeder extends Seeder
             'updated_at' => Carbon::now()
         ]);
         DB::table('wallets')->insert([
+            'id' => 3,
             'name' => 'Mercado Pago',
             'account_id' => $juan,
             'description' => "Valores en cuenta de Mercado Pago",
@@ -47,6 +50,7 @@ class WalletSeeder extends Seeder
         ]);
 
         DB::table('wallets')->insert([
+            'id' => 4,
             'name' => 'Efectivo',
             'account_id' => $pedro,
             'description' => "Valores en efectivo",
@@ -54,6 +58,7 @@ class WalletSeeder extends Seeder
             'updated_at' => Carbon::now()
         ]);
         DB::table('wallets')->insert([
+            'id' => 5,
             'name' => 'Banco Nación',
             'account_id' => $pedro,
             'description' => "Cuenta bancaria",
@@ -63,6 +68,7 @@ class WalletSeeder extends Seeder
         ]);
 
         DB::table('wallets')->insert([
+            'id' => 6,
             'name' => 'Efectivo',
             'account_id' => $santiago,
             'description' => "Valores en efectivo (moneda)",
@@ -70,6 +76,7 @@ class WalletSeeder extends Seeder
             'updated_at' => Carbon::now()
         ]);
         DB::table('wallets')->insert([
+            'id' => 7,
             'name' => 'Banco Macro',
             'account_id' => $santiago,
             'description' => "Cuenta bancaria",

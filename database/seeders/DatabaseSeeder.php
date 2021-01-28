@@ -19,8 +19,9 @@ class DatabaseSeeder extends Seeder
             AccountSeeder::class,
             BadgeSeeder::class,
             WalletSeeder::class,
+            TransactionSeeder::class,
         ]);
-        \App\Models\Transaction::factory(15)->create();
+        \App\Models\Transaction::factory(8)->create();
      //   \App\Models\User::factory(10)->create();
     }
 }
